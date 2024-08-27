@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load i18n %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "App Management" %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="brand">{% trans "AppManager" %}</a>
+            <div class="accessibility-toolbar p-2">
+                <button class="btn btn-sm btn-Dark" onclick="adjustFontSize('decrease')">A-</button>
+                <button class="btn btn-sm btn-secondary" onclick="adjustFontSize('default')">A</button>
+                <button class="btn btn-sm btn-secondary" onclick="adjustFontSize('increase')">A+</button>
+                <button class="btn btn-sm btn-secondary ml-2" onclick="toggleHighContrast()">{% trans "High Contrast" %}</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                <li><a href="{% url 'app_list' %}">{% trans "Apps" %}</a></li>
+                <li><a href="{% url 'app_add' %}">{% trans "Add New App" %}</a></li>
+            </ul>
+            <form class="for" action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% for lang_code, lang_name in LANGUAGES %}
+                        <option value="{{ lang_code }}">
+                            {{ lang_name }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Switch Language</button>
+            </form>
+        
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>{% trans "Uploaded Apps" %}</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>{% trans "Name" %}</th>
+                    <th>{% trans "Uploaded By" %}</th>
+                    <th>{% trans "APK File" %}</th>
+                    <th>{% trans "Actions" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for app in apps %}
+                <tr>
+                    <td>{{ app.name }}</td>
+                    <td>{{ app.uploaded_by.username }}</td>
+                    <td>{{ app.id }}</td>
+                    <td><a href="{{ app.apk_file.url }}">{% trans "Download APK" %}</a></td>
+                    <td>
+                        <a href="{% url 'app_update' app.id %}">{% trans "Edit" %}</a> | 
+                        <a href="{% url 'app_delete' app.id %}">{% trans "Delete" %}</a> |
+                        <a href="{% url 'app_run' app.id %}" onclick="return confirm('Are you sure you want to run the Appium test?');">RUN</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{% url 'app_add' %}" class="btn">{% trans "Add New App" %}</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>{% trans "&copy; 2024 AppManager. All rights reserved." %}</p>
+            <p><a href="#">{% trans "Terms of Service" %}</a> | <a href="#">{% trans "Privacy Policy" %}</a></p>
+        </div>
+    </footer>
+    <script src="{% static 'myapp/js/accessibility.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ezz1
+      MYSQL_DATABASE: tradvo_challenge_db
+      MYSQL_USER: django_user
+      MYSQL_PASSWORD: yourpassword
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+  web:
+    build: .
+    command: gunicorn --bind 0.0.0.0:8000 tradvo_challenge.wsgi:application
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+

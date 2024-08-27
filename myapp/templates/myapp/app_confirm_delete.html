@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Delete App" %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+</head>
+<body>
+    <h1>{% trans "Delete App" %}</h1>
+
+    <p>{% trans "Are you sure you want to delete the app \"{{ app.name }}\"?" %}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">{% trans "Confirm" %}</button>
+    </form>
+
+    <a href="{% url 'app_list' %}">{% trans "Cancel" %}</a>
+</body>
+</html>

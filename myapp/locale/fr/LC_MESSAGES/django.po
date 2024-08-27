@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <ezzsadaty@gmail.com>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSION DU PACKAGE\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-27 20:29+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: NOM COMPLET <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\templates\myapp\app_confirm_delete.html:7
+#: .\templates\myapp\app_confirm_delete.html:12
+msgid "Delete App"
+msgstr "Supprimer l'application"
+
+#: .\templates\myapp\app_confirm_delete.html:14
+msgid "Are you sure you want to delete the app \\"
+msgstr "Êtes-vous sûr de vouloir supprimer l'application \\"
+
+#: .\templates\myapp\app_confirm_delete.html:18
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: .\templates\myapp\app_confirm_delete.html:21
+msgid "Cancel"
+msgstr "Annuler"
+
+#: .\templates\myapp\app_form.html:10 .\templates\myapp\app_form.html:45
+msgid "Edit App"
+msgstr "Modifier l'application"
+
+#: .\templates\myapp\app_form.html:12 .\templates\myapp\app_form.html:47
+msgid "Add App"
+msgstr "Ajouter une application"
+
+#: .\templates\myapp\app_form.html:22 .\templates\myapp\app_list.html:16
+#: .\templates\myapp\home.html:21
+msgid "AppManager"
+msgstr "Gestionnaire d'applications"
+
+#: .\templates\myapp\app_form.html:27 .\templates\myapp\app_list.html:21
+msgid "High Contrast"
+msgstr "Contraste élevé"
+
+#: .\templates\myapp\app_form.html:31 .\templates\myapp\app_list.html:24
+#: .\templates\myapp\home.html:29
+msgid "Home"
+msgstr "Accueil"
+
+#: .\templates\myapp\app_form.html:32 .\templates\myapp\app_list.html:25
+#: .\templates\myapp\home.html:30
+msgid "Apps"
+msgstr "Applications"
+
+#: .\templates\myapp\app_form.html:33 .\templates\myapp\app_list.html:26
+#: .\templates\myapp\app_list.html:63 .\templates\myapp\home.html:31
+msgid "Add New App"
+msgstr "Ajouter une nouvelle application"
+
+#: .\templates\myapp\app_form.html:56
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: .\templates\myapp\app_form.html:58
+msgid "Submit"
+msgstr "Soumettre"
+
+#: .\templates\myapp\app_form.html:63
+msgid "Back to App List"
+msgstr "Retour à la liste des applications"
+
+#: .\templates\myapp\app_form.html:69 .\templates\myapp\app_list.html:69
+msgid "&copy; 2024 AppManager. All rights reserved."
+msgstr "&copy; 2024 Gestionnaire d'applications. Tous droits réservés."
+
+#: .\templates\myapp\app_form.html:70 .\templates\myapp\app_list.html:70
+msgid "Terms of Service"
+msgstr "Conditions d'utilisation"
+
+#: .\templates\myapp\app_form.html:70 .\templates\myapp\app_list.html:70
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: .\templates\myapp\app_list.html:8
+msgid "App Management"
+msgstr "Gestion des applications"
+
+#: .\templates\myapp\app_list.html:35
+msgid "Uploaded Apps"
+msgstr "Applications téléchargées"
+
+#: .\templates\myapp\app_list.html:40
+msgid "Name"
+msgstr "Nom"
+
+#: .\templates\myapp\app_list.html:41
+msgid "Uploaded By"
+msgstr "Téléchargé par"
+
+#: .\templates\myapp\app_list.html:42
+msgid "APK File"
+msgstr "Fichier APK"
+
+#: .\templates\myapp\app_list.html:43
+msgid "Actions"
+msgstr "Actions"
+
+#: .\templates\myapp\app_list.html:52
+msgid "Download APK"
+msgstr "Télécharger APK"
+
+#: .\templates\myapp\app_list.html:54
+msgid "Edit"
+msgstr "Modifier"
+
+#: .\templates\myapp\app_list.html:55
+msgid "Delete"
+msgstr "Supprimer"
+
+#: .\templates\myapp\home.html:8 .\templates\myapp\home.html:47
+msgid "Welcome to Tradvo Challenge"
+msgstr "Bienvenue au Tradvo Challenge"
+
+#: .\templates\myapp\home.html:26
+msgid "HighContrast"
+msgstr "Contraste élevé"
+
+#: .\templates\myapp\home.html:48
+msgid " Full-Stack Web Application with Django and Appium."
+msgstr "Application Web Full-Stack avec Django et Appium."
+
+#: .\templates\myapp\home.html:67
+msgid "Feature One"
+msgstr "Fonctionnalité Une"
+
+#: .\templates\myapp\home.html:68
+msgid "User Authentication and Management."
+msgstr "Authentification et gestion des utilisateurs."
+
+#: .\templates\myapp\home.html:75
+msgid "Feature Two"
+msgstr "Fonctionnalité Deux"
+
+#: .\templates\myapp\home.html:76
+msgid "App Management."
+msgstr "Gestion des applications."
+
+#: .\templates\myapp\home.html:83
+msgid "Feature Three"
+msgstr "Fonctionnalité Trois"
+
+#: .\templates\myapp\home.html:84
+msgid "App Evaluation with Appium."
+msgstr "Évaluation des applications avec Appium."
+
+#: .\templates\myapp\home.html:91
+msgid "Feature Four"
+msgstr "Fonctionnalité Quatre"
+
+#: .\templates\myapp\home.html:92
+msgid "Accessibility Features & Multilingual Support."
+msgstr "Fonctionnalités d'accessibilité et support multilingue."
+
+#: .\templates\myapp\home.html:105
+msgid "Ready to Take the Challenge?"
+msgstr "Prêt à relever le défi ?"
+
+#: .\templates\myapp\home.html:106
+msgid "Join Tradvo Challenge today and start exploring the possibilities!"
+msgstr "Rejoignez le Tradvo Challenge aujourd'hui et commencez à explorer les possibilités !"
+
+#: .\templates\myapp\home.html:107
+msgid "Sign Up Now"
+msgstr "Inscrivez-vous maintenant"
+
+#: .\templates\myapp\login.html:8 .\templates\myapp\login.html:13
+#: .\templates\myapp\login.html:17
+msgid "Login"
+msgstr "Connexion"
+
+#: .\templates\myapp\login.html:19
+msgid "Don't have an account?"
+msgstr "Vous n'avez pas de compte ?"
+
+#: .\templates\myapp\login.html:19
+msgid "Register here"
+msgstr "Inscrivez-vous ici"
+
+#: .\templates\myapp\register.html:8 .\templates\myapp\register.html:13
+#: .\templates\myapp\register.html:17
+msgid "Register"
+msgstr "Inscription"
+
+#: .\templates\myapp\register.html:19
+msgid "Already have an account?"
+msgstr "Vous avez déjà un compte ?"
+
+#: .\templates\myapp\register.html:19
+msgid "Login here"
+msgstr "Connectez-vous ici"
+
+#~ msgid "Get Started"
+#~ msgstr "Commencer"
+
+#, fuzzy
+#~| msgid "Feature Five"
+#~ msgid "Feature five"
+#~ msgstr "Fonctionnalité Cinq"
+
+#~ msgid "Multilingual Support."
+#~ msgstr "Support multilingue."
+
+#~ msgid "Your journey to innovation begins here."
+#~ msgstr "Votre voyage vers l'innovation commence ici."
+
+#~ msgid "Describe the first amazing feature of your application here."
+#~ msgstr "Décrivez ici la première fonctionnalité incroyable de votre application."
+
+#~ msgid "Describe the second amazing feature of your application here."
+#~ msgstr "Décrivez ici la deuxième fonctionnalité incroyable de votre application."
+
+#~ msgid "Describe the third amazing feature of your application here."
+#~ msgstr "Décrivez ici la troisième fonctionnalité incroyable de votre application."
