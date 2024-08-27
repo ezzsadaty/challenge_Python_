@@ -13,7 +13,7 @@ This is a Django project for the Tradvo Challenge. The project is designed to sh
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/tradvo_challenge.git
+   git clone https://github.com/ezzsadaty/challenge_Python_
    cd tradvo_challenge
 
 
