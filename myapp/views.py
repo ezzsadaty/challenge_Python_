@@ -7,9 +7,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import App
 from myapp.utils import launch_emulator, start_appium_session, capture_initial_state, click_first_button, capture_new_state, assess_screen_change, save_test_results,record_video, stop_video
 from django.shortcuts import redirect
-from django.conf import settings
-from django.utils.translation import activate
-from django.utils import translation
+from time import sleep
+from django.http import HttpResponseServerError
+
 
 def home(request):
     return render(request, 'myapp/home.html')
@@ -78,35 +78,54 @@ def app_delete(request, pk):
     return render(request, 'myapp/app_confirm_delete.html', {'app': app})
 
 
+
 def app_run(request, app_id):
     app = get_object_or_404(App, id=app_id)
+    
+    try:
+        # Start the Android Emulator
+        launch_emulator("Pixel_8_API_35")
+        print("Emulator launching...")
 
-    # Start the Android Emulator
-    launch_emulator("Pixel_8_API_35")
-    print("try")
-    # Start the Appium Session
-    driver = start_appium_session(app.apk_file.path)
-    print("appium sessio suc")
-    # Capture Initial State
-    initial_hierarchy = capture_initial_state(driver)
+        # Wait for emulator to fully boot
+        sleep(20)  # Adjust sleep time as necessary
 
-    # Record Video
-    record_video()
+        # Start the Appium Session
+        driver = start_appium_session(app.apk_file.path)
+        print("Appium session started successfully")
 
-    # Click the First Button and Capture New State
-    click_first_button(driver)
-    new_hierarchy = capture_new_state(driver)
+        # Capture Initial State
+        initial_hierarchy = capture_initial_state(driver)
+        print("Initial UI state captured")
 
-    # Stop Video Recording
-    stop_video()
+        # Record Video
+        record_video()
+        print("Video recording started")
 
-    # Assess Screen Change
-    screen_changed = assess_screen_change(initial_hierarchy, new_hierarchy)
+        # Click the First Button and Capture New State
+        click_first_button(driver)
+        new_hierarchy = capture_new_state(driver)
+        print("New UI state captured after button click")
 
-    # Save the Test Results
-    save_test_results(app, screen_changed, new_hierarchy)
+        # Stop Video Recording
+        stop_video()
+        print("Video recording stopped")
 
-    # Redirect to the App List or Show a Success Message
-    print("succes")
-    # return redirect('myapp/app_list.html')
+        # Assess Screen Change
+        screen_changed = assess_screen_change(initial_hierarchy, new_hierarchy)
+        print(f"Screen change detected: {screen_changed}")
+
+        # Save the Test Results
+        save_test_results(app, screen_changed, new_hierarchy)
+        print("Test results saved successfully")
+
+    except Exception as e:
+        print(f"Error occurred during app test run: {str(e)}")
+        return HttpResponseServerError("An error occurred during the app test run.")
+
+    finally:
+        if 'driver' in locals():
+            driver.quit()
+            print("Appium driver closed")
+
     return render(request, 'myapp/app_list.html')
