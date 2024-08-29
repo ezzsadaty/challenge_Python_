@@ -78,46 +78,6 @@ def app_delete(request, pk):
     return render(request, 'myapp/app_confirm_delete.html', {'app': app})
 
 
-# def app_run(request, app_id):
-#     app = get_object_or_404(App, id=app_id)
-
-#     # Start emulator
-#     launch_emulator("Pixel_Fold_API_35")
-
-#     # Start Appium session
-#     driver = start_appium_session(app.apk_file.path)
-    
-#     initial_hierarchy = capture_initial_state(driver)
-    
-#     click_first_button(driver)
-    
-#     # Capture new screen state
-#     new_hierarchy = capture_new_state(driver)
-    
-#     # Assess whether the screen changed
-#     screen_changed = assess_screen_change(initial_hierarchy, new_hierarchy)
-    
-#     # Save the results
-#     save_test_results(app, screen_changed)
-
-    
-#     # # Capture UI hierarchy
-#     # hierarchy = capture_ui_hierarchy(driver)
-    
-#     # # Simulate click and check screen change
-#     # screen_changed, new_hierarchy = simulate_click(driver, "button_id_here")
-    
-#     # Record video
-#     record_video()
-#     stop_video()
-
-#     # # Store results in the database
-#     # save_results(app, screen_changed, new_hierarchy)
-
-#     # Redirect or show success message
-#     return redirect('app_list')
-
-
 def app_run(request, app_id):
     app = get_object_or_404(App, id=app_id)
 
